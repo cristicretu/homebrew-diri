@@ -7,10 +7,19 @@ orchestrator for coding agents.
 brew install --cask cristicretu/diri/diri
 ```
 
-Or tap first, then install by short name:
+The tap has to be named in full. A bare `diri` only resolves against Homebrew's
+default taps, and on Homebrew 6 a bare name also trips the third-party trust
+gate — naming the tap explicitly is what counts as intent:
+
+```
+Error: Refusing to load cask cristicretu/diri/diri from untrusted tap cristicretu/diri.
+```
+
+If you would rather type `brew install --cask diri`, trust the tap once:
 
 ```sh
 brew tap cristicretu/diri
+brew trust cristicretu/diri
 brew install --cask diri
 ```
 
