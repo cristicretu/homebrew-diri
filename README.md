@@ -1,0 +1,44 @@
+# homebrew-diri
+
+Homebrew tap for [diri](https://github.com/cristicretu/diri) — a native macOS
+orchestrator for coding agents.
+
+```sh
+brew install --cask cristicretu/diri/diri
+```
+
+Or tap first, then install by short name:
+
+```sh
+brew tap cristicretu/diri
+brew install --cask diri
+```
+
+## Updating
+
+The cask is a tap rather than a submission to `homebrew-cask` because that
+requires a notability threshold diri does not meet yet.
+
+diri updates itself, so the cask declares `auto_updates true`: Homebrew installs
+it once and then stays out of the way. `brew upgrade` will not clobber a build
+the app updated itself to, and `brew outdated` will not report a version skew
+that is not really stale. Reinstalling explicitly still works:
+
+```sh
+brew reinstall --cask diri
+```
+
+`diri/scripts/release.sh` in the main repo bumps the version and sha256 here on
+every release, so this tap should never be edited by hand.
+
+## Uninstalling
+
+```sh
+brew uninstall --cask diri
+```
+
+`brew uninstall --zap --cask diri` also removes diri's own preferences and
+caches. It deliberately leaves `~/Library/Application Support/Dirijor` alone:
+that is the daemon's state — session records, hosts, live holder specs — and it
+is shared with the legacy Dirijor.app. Removing the client should not destroy
+your sessions.
