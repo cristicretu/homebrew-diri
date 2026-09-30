@@ -1,6 +1,6 @@
 cask "diri" do
-  version "0.8.10"
-  sha256 "bea32de7666e144868f45d003a67fb8db49d7707e68119af8c64260b73ae4618"
+  version "0.8.11"
+  sha256 "53103e9a7f18846fbf9885845826eeac0ce7f0eaaa0acfb8fdbe18648bd8577f"
 
   url "https://github.com/cristicretu/diri/releases/download/v#{version}/diri-#{version}-universal.dmg"
   name "diri"
