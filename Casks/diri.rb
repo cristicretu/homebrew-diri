@@ -4,7 +4,7 @@ cask "diri" do
 
   url "https://github.com/cristicretu/diri/releases/download/v#{version}/diri-#{version}-universal.dmg"
   name "diri"
-  desc "Orchestrator for coding agents"
+  desc "Best way to work with coding agents"
   homepage "https://github.com/cristicretu/diri"
 
   livecheck do
